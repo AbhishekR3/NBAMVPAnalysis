@@ -1,4 +1,4 @@
-bsds <- read.csv(file="C:/Users/Abhishek Ramesh/Google Drive/1USF/BSDS 100/Final Project/bsds.csv")
+bsds <- read.csv(file="C:/Users/Abhishek Ramesh/Google Drive/1USF/Fall 2018/BSDS 100/Final Project/bsds.csv")
 
 #4. What school has produced the most MVPs? How many has it produced?
 summary(bsds$College)
@@ -25,7 +25,7 @@ summary(bsds$Tm)
 library(ggplot2)
 
 #ASSIST
-p <- ggplot(bsds, aes(x = bsds$Season, y = bsds$AST, colour = heat.colors(1)))+
+p <- ggplot(bsds, aes(x = Season, y = AST, colour = heat.colors(1)))+
   geom_col() + ggtitle("MVP Players Assists Per Game") + theme(plot.title = element_text(hjust = 0.5))
 p + labs(x = "Season") + labs(y = "Assist")
 
@@ -34,7 +34,7 @@ p + labs(x = "Season") + labs(y = "Assist")
 #from various MVP Players has increased.
 
 #AGE
-p <- ggplot(bsds, aes(x = bsds$Season, y = bsds$Age, colour = heat.colors(1)))+
+p <- ggplot(bsds, aes(x = Season, y = Age, colour = heat.colors(1)))+
   geom_col() + ggtitle("MVP Players Age") + theme(plot.title = element_text(hjust = 0.5))
 p + labs(x = "Season") + labs(y = "Age")
 
@@ -44,7 +44,7 @@ p + labs(x = "Season") + labs(y = "Age")
 #between their experience and physicall fitness.
 
 #TEAM PLAYED
-p <- ggplot(bsds, aes(x = bsds$Season, y = bsds$Tm, colour = heat.colors(1)))+
+p <- ggplot(bsds, aes(x = Season, y = Tm, colour = heat.colors(1)))+
   geom_boxplot() + ggtitle("MVP Players Team") + theme(plot.title = element_text(hjust = 0.5))
 p + labs(x = "Season") + labs(y = "Team")
 #The teams with MVP have varied across the years, while some teams such as the Lakers and Rockets
@@ -52,7 +52,7 @@ p + labs(x = "Season") + labs(y = "Team")
 
 
 #GAME
-p <- ggplot(bsds, aes(x = bsds$Season, y = bsds$G, colour = heat.colors(1)))+
+p <- ggplot(bsds, aes(x = Season, y = G, colour = heat.colors(1)))+
   geom_col() + ggtitle("MVP Players Game Played") + theme(plot.title = element_text(hjust = 0.5))
 p + labs(x = "Season") + labs(y = "Games")
 #MVPs have generally played nearly every game in the basketball season;
@@ -63,7 +63,7 @@ p + labs(x = "Season") + labs(y = "Games")
 
 
 #MINUTES PLAYED
-p <- ggplot(bsds, aes(x = bsds$Season, y = bsds$MP, colour = heat.colors(1)))+
+p <- ggplot(bsds, aes(x = Season, y = MP, colour = heat.colors(1)))+
   geom_col() + ggtitle("MVP Players Minutes Played Per Game") + theme(plot.title = element_text(hjust = 0.5))
 p + labs(x = "Season") + labs(y = "Minutes Played")
 #Like the number of games played, the players would usually be giving their peak performance.
@@ -73,7 +73,7 @@ mean(bsds$MP)
 
 
 #POINTS SCORED
-p <- ggplot(bsds, aes(x = bsds$Season, y = bsds$PTS, colour = heat.colors(1)))+
+p <- ggplot(bsds, aes(x = Season, y = PTS, colour = heat.colors(1)))+
   geom_col() + ggtitle("MVP Players Points Scored Per Game") + theme(plot.title = element_text(hjust = 0.5))
 p + labs(x = "Season") + labs(y = "Points")
 #MVPs generally have a high scoring per game, which can be seen by the graph.
@@ -82,7 +82,7 @@ mean(bsds$PTS)
 #There could be an emerging trend that the recent MVPs are scoring more.
 
 #REBOUNDS
-p <- ggplot(bsds, aes(x = bsds$Season, y = bsds$TRB, colour = heat.colors(1)))+
+p <- ggplot(bsds, aes(x = Season, y = TRB, colour = heat.colors(1)))+
   geom_col() + ggtitle("MVP Players Rebounds Per Game") + theme(plot.title = element_text(hjust = 0.5))
 p + labs(x = "Season") + labs(y = "Rebounds")
 #The number of rebounds per game for MVPs have generally decreased.
@@ -90,42 +90,40 @@ p + labs(x = "Season") + labs(y = "Rebounds")
 #MVPs maybe be scoring more by themselves rather than passing it other players on the team.
 
 #STEAL
-p <- ggplot(bsds, aes(x = bsds$Season, y = bsds$STL, colour = heat.colors(1)))+
+p <- ggplot(bsds, aes(x = Season, y = STL, colour = heat.colors(1)))+
   geom_col() + ggtitle("MVP Players Steal Per Game") + theme(plot.title = element_text(hjust = 0.5))
 p + labs(x = "Season") + labs(y = "Steal")
 #The number of steals have generally increased till the late 90s, but decreased during the early 2000s.
 #While this has occured, the trend for increasing the number of steals has increased in recent years.
 
-
 #BLOCKS
-p <- ggplot(bsds, aes(x = bsds$Season, y = bsds$BLK, colour = heat.colors(1)))+
+p <- ggplot(bsds, aes(x = Season, y = BLK, colour = heat.colors(1)))+
   geom_col() + ggtitle("MVP Players Blocks Per Game") + theme(plot.title = element_text(hjust = 0.5))
 p + labs(x = "Season") + labs(y = "Blocks")
 #The number of blocks by an MVP per game has significantly decreased.
-mean(bsds$BLK) > bsds$BLK
 #As seen above, the blocks of recent years are below the mean of blocks over the past seasons.
 
 #FIELD GOALS PERCENTAGE
-p <- ggplot(bsds, aes(x = bsds$Season, y = bsds$FG., colour = heat.colors(1)))+
+p <- ggplot(bsds, aes(x = Season, y = FG., colour = heat.colors(1)))+
   geom_col() + ggtitle("MVP Players Field Goals Percentage") + theme(plot.title = element_text(hjust = 0.5))
 p + labs(x = "Season") + labs(y = "Field Goals Percentage")
 #The field goal percentage remains nearly constant with a minor towards the current years.
 
-
 #3 POINT PERCENTAGE
-p <- ggplot(bsds, aes(x = bsds$Season, y = bsds$X3P., colour = heat.colors(1)))+
+p <- ggplot(bsds, aes(x = Season, y = X3P., colour = heat.colors(1)))+
   geom_col()+ ggtitle("MVP Players 3 Point Percentage") + theme(plot.title = element_text(hjust = 0.5))
 p + labs(x = "Season") + labs(y = "3 Point Percentage")
 #As seen in the graph the field goal percentage has increased overall with more MVPs actually shooting 3s.
+#(Note: 3s only started being recorded during the 79-80 season)
 
 #FREE THROW
-p <- ggplot(bsds, aes(x = bsds$Season, y = bsds$FT., colour = heat.colors(1)))+
+p <- ggplot(bsds, aes(x = Season, y = FT., colour = heat.colors(1)))+
   geom_col() + ggtitle("MVP Players Free Throw Percentage") + theme(plot.title = element_text(hjust = 0.5))
 p + labs(x = "Season") + labs(y = "Free Throw Percentage")
 #The free throw percentage has generally increased with an exception during 2000.
 
 #WIN SHARES
-p <- ggplot(bsds, aes(x = bsds$Season, y = bsds$WS, colour = heat.colors(1)))+
+p <- ggplot(bsds, aes(x = Season, y = WS, colour = heat.colors(1)))+
   geom_col() + ggtitle("MVP Players Win Shares") + theme(plot.title = element_text(hjust = 0.5))
 p + labs(x = "Season") + labs(y = "Win Shares")
 #The win shares had an increasing graph initially, but then started to fluctuate after 2000.
@@ -134,14 +132,14 @@ p + labs(x = "Season") + labs(y = "Win Shares")
 #The weight of the team could be more spread out.
 
 #WIN SHARES 48
-p <- ggplot(bsds, aes(x = bsds$Season, y = bsds$WS.48, colour = heat.colors(1)))+
+p <- ggplot(bsds, aes(x = Season, y = WS.48, colour = heat.colors(1)))+
   geom_col() + ggtitle("MVP Players Win Share Per Minute") + theme(plot.title = element_text(hjust = 0.5))
 p + labs(x = "Season") + labs(y = "Win Share Per Minute")
 #The win shares per minute per game has generally increased with a few exception of strict decrease.
 
 
 #POSITION
-p <- ggplot(bsds, aes(x = bsds$Season, y = bsds$MVP.Position, colour = heat.colors(1)))+
+p <- ggplot(bsds, aes(x = Season, y = MVP.Position, colour = heat.colors(1)))+
   geom_col() + ggtitle("MVP Players Position Played") + theme(plot.title = element_text(hjust = 0.5))
 p + labs(x = "Season") + labs(y = "Position Played")
 #As seen by the graph, the position played by MVPs were generally centers in the early years.
@@ -151,16 +149,15 @@ p + labs(x = "Season") + labs(y = "Position Played")
 #All the nationalities of the players are American, except for 3 players: Hakeem Olajuwon, Dirk Nowitzki, and Steve Nash.
 #These players attended College in America except for Dirk Nowitzki.
 #It could be said that, since all the players, except Dirk Nowitzki, are American or attended American Colleges,
-#there does appear to be a link to help them become a better player with understanding Basketball and NBA.
+#There does appear to be a link to help them become a better player with understanding basketball in the NBA.
 
 
 #Height
-p <- ggplot(bsds, aes(x = bsds$Season, y = bsds$MVP.Height..ft., colour = heat.colors(1)))+
+p <- ggplot(bsds, aes(x = Season, y = MVP.Height..ft., colour = heat.colors(1)))+
   geom_col() + ggtitle("MVP Players Position Played") + theme(plot.title = element_text(hjust = 0.5))
 p + labs(x = "Season") + labs(y = "Heigh in Feet")
 #While the height of MVPs do stay above 6 over the years,
 #there is a visible slight decrease over the years as most players are falling below the mean height.
-mean(bsds$MVP.Height..ft.) > bsds$MVP.Height..ft.
 
 #Finals Finish, Win Percentage, and Seeding are highly fluctuating throughout the years.
 #This is probably due to the fact basketball is a team game, and only if the team is 
